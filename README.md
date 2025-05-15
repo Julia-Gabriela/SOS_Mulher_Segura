@@ -26,8 +26,8 @@ O **SOS Mulher Segura** que esta sendo desenvolvido é uma aplicação web com s
 - **Implantação**: Monolítico modular, com estrutura migrável para micro-serviços
 
 ## 🤝 Colaboradores
+- [Júlia Gabriela](https://github.com/Julia-Gabriela)
 - [Lara Ewellen](https://github.com/Laraewellen)
 - [Luiza lima](https://github.com/luizalima13)
-- [Júlia Gabriela](https://github.com/Julia-Gabriela)
 - [Ian Caldas](https://github.com/IanACaldas)
 - [Joyce Aline](https://github.com/Joyce2004Aline)
