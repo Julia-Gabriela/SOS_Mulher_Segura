@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+/* Navbar */
+nav {
+  z-index: 2;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 80px;
+  position: relative;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 60px;
+}
+
+nav li {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+nav .active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* Botão Login à direita */
+.login-btn {
+  position: absolute;
+  right: 80px;
+  background-color: #b7a8dc;
+  color: white;
+  font-weight: bold;
+  padding: 10px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.flowers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50vw;
+  max-width: none;
+  z-index: 0;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Container principal */
+.welcome-container {
+  display: flex;
+  justify-content: center;
+  /* Muda de center para flex-end */
+  align-items: center;
+  height: calc(100vh - 120px);
+  padding: 0 80px;
+  /* Aumenta o padding lateral */
+  padding-left: 800px;
+}
+
+
+.welcome-text {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  /* ← Alinha tudo no centro horizontal */
+  text-align: center;
+}
+
+.welcome-title {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-inline {
+  width: 80px;
+  height: auto;
+}
+
+.welcome-text h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 7rem;
+  margin: 0;
+}
+
+.welcome-description {
+  font-family: 'Roboto', sans-serif;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: justify;
+  max-width: 600px;
+}
+
+.welcome-buttons {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-self: flex-end;
+}
+
+
+.logo-inline {
+  width: 120px;
+  height: auto;
+}
+
+.logo {
+  width: 500px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 100px;
+  color: #444;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+/* Botões */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn {
+  font-family: 'Roboto', sans-serif;
+  background-color: #b7a8dc;
+  color: white;
+  font-weight: bold;
+  padding: 14px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: center;
+  transition: background 0.3s;
+  width: 220px;
+}
+
+.btn:hover {
+  background-color: #a48ed1;
+}
+
+/* Rodapé com ícones */
+footer {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  display: flex;
+  gap: 20px;
+  z-index: 2;
+}
+
+.icons {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  display: flex;
+  gap: 20px;
+  z-index: 100;
+}
+
+.icons img {
+  width: 22px;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+
+.icons img:hover {
+  opacity: 1;
+}

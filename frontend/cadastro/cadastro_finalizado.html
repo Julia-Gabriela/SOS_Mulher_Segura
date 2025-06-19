@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro Finalizado</title>
+   <link rel="stylesheet" href="{% static 'css/cadastroFinalizado.css' %}">
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <img src="{% static 'img/logo-icon.svg' %}" alt="Logo" class="logo">
+      <h1>Cadastro feito com sucesso</h1>
+      <a href="{% url 'login' %}">
+        <button class="btn">Ir para login</button>
+      </a>
+
+    </div>
+
+    <!-- Flor via IMG -->
+    <div class="flowers">
+      <img src="{% static 'img/flowers_cadastro_direita.png' %}" alt="Flores decorativas">
+    </div>
+  </div>
+
+  <div class="icons">
+    <a href="#"><img src="{% static 'img/youtube.svg' %}" alt="YouTube"></a>
+    <a href="#"><img src="{% static 'img/instagram.svg' %}" alt="Instagram"></a>
+    <a href="#"><img src="{% static 'img/telefone.svg' %}" alt="Telefone"></a>
+  </div>
+
+  <script>
+    function irParaLogin() {
+      window.location.href = "/frontend/login/login.html";
+    }
+  </script>
+</body>
+
+</html>

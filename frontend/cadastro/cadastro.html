@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registrar</title>
+  <link rel="stylesheet" href="{% static 'css/cadastro.css' %}">
+</head>
+
+<body>
+  <div class="container">
+    <div class="flowers">
+      <img src="{% static 'img/flowers_cadastro.png' %}" alt="flowers_cadastro" />
+    </div>
+
+    <div class="form-container">
+      <div class="logo">
+        <img src="{% static 'img/logo-icon.svg' %}" alt="Logo" />
+        <h1>Registrar</h1>
+      </div>
+
+      {% if erro %}
+        <p style="color:red;">{{ erro }}</p>
+      {% endif %}
+
+      <form method="POST" action="{% url 'cadastrar_usuario' %}">
+        {% csrf_token %}
+        <input type="text" name="nome" placeholder="Nome Completo" required />
+        <input type="text" name="cpf" placeholder="CPF" required />
+        <input type="email" name="email" placeholder="Email" required />
+
+        <div class="double">
+          <input type="date" name="data_nascimento" placeholder="Data Nascimento" />
+          <input type="tel" name="telefone" placeholder="Telefone" />
+        </div>
+
+        <div class="double">
+          <input type="text" name="cep" placeholder="CEP" />
+          <input type="text" name="bairro" placeholder="Bairro" />
+        </div>
+
+        <div class="double">
+          <input type="text" name="numero" placeholder="Número" />
+          <input type="text" name="complemento" placeholder="Complemento" />
+        </div>
+
+        <input type="password" name="senha" placeholder="Senha" required />
+
+        <button type="submit">Cadastrar</button>
+      </form>
+
+      <div class="icons">
+        <a href="#"><img src="{% static 'img/youtube.svg' %}" alt="YouTube" /></a>
+        <a href="#"><img src="{% static 'img/instagram.svg' %}" alt="Instagram" /></a>
+        <a href="#"><img src="{% static 'img/telefone.svg' %}" alt="Telefone" /></a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

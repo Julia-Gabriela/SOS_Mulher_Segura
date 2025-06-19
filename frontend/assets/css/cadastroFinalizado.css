@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  color: #666;
+  position: relative;
+  background-color: #fff;
+}
+
+/* Centraliza o conteúdo no meio da tela */
+.container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 0 20px;
+}
+
+.logo {
+  width: 60px;
+  margin-bottom: 20px;
+  filter: opacity(0.7);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+button {
+  background-color: #b3a4d6;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #9a8bc4;
+}
+
+/* Imagem de flores decorativas à direita */
+.flowers {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: auto;
+  overflow: hidden;
+}
+
+.flowers img {
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Ícones redes sociais */
+.icons {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  display: flex;
+  gap: 20px;
+  z-index: 100;
+}
+
+.icons img {
+  width: 22px;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+
+.icons img:hover {
+  opacity: 1;
+}

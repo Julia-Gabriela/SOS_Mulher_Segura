@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+
+<body>
+    <a href="{% url 'home' %}" class="back-button">Voltar</a>
+
+    <div class="container">
+        <div class="flowers">
+            <img src="{% static 'img/flowers_cadastro.png' %}" alt="Flores" />
+        </div>
+
+        <div class="form-container">
+            <div class="login-box">
+                <div class="logo">
+                    <img src="{% static 'img/logo-icon.svg' %}" alt="Logo" />
+                    <h1>Login</h1>
+                </div>
+                <form method="POST">
+                    {% csrf_token %}
+                    <!-- Campo CPF -->
+                    <input type="text" name="cpf" placeholder="CPF/Matrícula" value="{{ request.POST.cpf }}" required>
+                    <!-- Campo Senha -->
+                    <input type="password" name="senha" placeholder="Senha" required>
+                    <!-- Botão -->
+                    <button type="submit">Entrar</button>
+                    <a href="#" class="forgot">Esqueci minha senha</a>
+
+                    <!-- Mensagens de erro ou sucesso -->
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p class="error">{{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="icons">
+        <a href="#"><img src="{% static 'img/youtube.svg' %}" alt="YouTube"></a>
+        <a href="#"><img src="{% static 'img/instagram.svg' %}" alt="Instagram"></a>
+        <a href="#"><img src="{% static 'img/telefone.svg' %}" alt="Telefone"></a>
+    </div>
+
+    <script src="{% static 'assets/js/script.js' %}"></script>
+</body>
+
+</html>
