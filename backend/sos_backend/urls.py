@@ -33,15 +33,13 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('usuarios/', include('usuarios.urls')),
-    #path('', views.index, name='index'),
     path('vitimas/', include('vitimas.urls')),
-   
     path('sistema/', include('sistema.urls')),
-   
     path('cadastro/', cadastro_view, name='cadastro'),
-    # frontend/index.html renderizado como página inicial
     path('', TemplateView.as_view(template_name='index.html'), name='home'),
     path('login/', include('login.urls')),
+    path('sobre/', views.sobre, name='sobre'),
+    path('contato/', views.contato, name='contato'),
     
 ]
 if settings.DEBUG:
