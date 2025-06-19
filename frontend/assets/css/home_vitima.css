@@ -1,0 +1,136 @@
+/* --- Configurações Iniciais --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    color: #666;
+    background-color: #fff;
+}
+
+/* --- Layout Principal --- */
+.container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 55%; 
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    width: 100%;
+    max-width: 550px; 
+}
+
+.imagem {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50vw;
+    z-index: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.imagem img {
+    max-width: 75%;
+    max-height: 75%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* --- Estilos dos Elementos --- */
+.logo {
+    width: 100px; 
+    margin-bottom: 25px;
+    filter: opacity(0.7);
+}
+
+.sos-button {
+    background-color: #b3a4d6;
+    color: white;
+    padding: 18px 35px;
+    border-radius: 26px; 
+    cursor: pointer;
+    /* MUDANÇA FINAL 👇: Sombra exata do Figma */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 4rem; 
+    font-weight: 400; 
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    width: 80%;
+    max-width: 420px;
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+.nav-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: center;
+}
+
+.nav-button {
+    background-color: #b3a4d6;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 26px;
+    cursor: pointer;
+    /* MUDANÇA FINAL 👇: Sombra exata do Figma */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 0.9rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    width: 75%;
+    max-width: 340px;
+}
+
+.sos-button:hover, .nav-button:hover {
+    background-color: #9a8bc4;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); /* Sombra um pouco menor no hover */
+}
+
+.icons {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    display: flex;
+    gap: 20px;
+    z-index: 100;
+}
+
+.icons img {
+    width: 22px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.icons img:hover {
+    opacity: 1;
+}

@@ -1,10 +1,40 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Home da Vítima</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="{% static 'css/home_vitima.css' %}">
 </head>
 <body>
-    <h1>Bem-vinda à página da vítima!</h1>
+
+    <div class="container">
+
+        <div class="imagem">
+            <img src="{% static 'img/figura_mulher.png' %}" alt="Ilustração de uma mulher">
+        </div>
+
+        <div class="content">
+            <img src="{% static 'img/logo-icon.svg' %}" alt="Logo" class="logo">
+
+            <a href="#" class="sos-button">SOS</a>
+            
+            <div class="nav-buttons">
+                <a href="#" class="nav-button">Registar denúncia</a>
+                <a href="#" class="nav-button">Histórico de denúncias</a>
+                <a href="#" class="nav-button">Configurações</a>
+                <a href="#" class="nav-button">Ajuda</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="icons">
+        <a href="#"><img src="{% static 'img/youtube.svg' %}" alt="YouTube"></a>
+        <a href="#"><img src="{% static 'img/instagram.svg' %}" alt="Instagram"></a>
+        <a href="#"><img src="{% static 'img/telefone.svg' %}" alt="Telefone"></a>
+    </div>
+
 </body>
 </html>
