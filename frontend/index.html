@@ -1,13 +1,54 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Index</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOS Mulher Segura</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <h1>Index</h1>
-    <a href="home_vitimas.html">Voltar para Home</a>
+  <header>
+    <nav>
+      <ul>
+        <li class="active">Início</li>
+        <li>Sobre</li>
+        <li>Contato</li>
+      </ul>
+      <a href="{% url 'login' %}" class="login-btn">Login</a>
+    </nav>
+  </header>
+
+  <img src="{% static 'img/flowers.png' %}" alt="flowers" class="flowers">
+
+  <div class="welcome-container">
+    <div class="welcome-text">
+      <div class="welcome-title">
+        <img src="{% static 'img/logo-icon.svg' %}" class="logo-inline" alt="Logo SOS Mulher Segura" />
+        <h1>Bem vinda!</h1>
+      </div>
+      <p class="welcome-description">
+        "Uma plataforma pensada para oferecer segurança, acolhimento e apoio. Aqui, você encontra um espaço seguro para denunciar situações de risco, acompanhar seus registros e acionar ajuda de forma rápida e discreta. <br>
+        Juntas, somos mais fortes na luta contra a violência doméstica."
+      </p>
+      <div class="welcome-buttons">
+        <a href="{% url 'cadastro' %}" class="btn">Cadastrar vítima</a>
+        <a href="#" class="btn">Cadastrar oficial</a>
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="icons">
+      <a href="#"><img src="{% static 'img/youtube.svg' %}" alt="YouTube" /></a>
+      <a href="#"><img src="{% static 'img/instagram.svg' %}" alt="Instagram" /></a>
+      <a href="#"><img src="{% static 'img/telefone.svg' %}" alt="Telefone" /></a>
+    </div>
+  </footer>
 </body>
+
 </html>
