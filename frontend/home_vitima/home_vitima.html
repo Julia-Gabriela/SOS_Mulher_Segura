@@ -18,7 +18,7 @@
         <div class="content">
             <img src="{% static 'img/logo-icon.svg' %}" alt="Logo" class="logo">
 
-            <a href="#" class="sos-button">SOS</a>
+            <a href="#" id="sos-button-trigger" class="sos-button">SOS</a>
             
             <div class="nav-buttons">
                 <a href="#" class="nav-button">Registar denúncia</a>
@@ -35,6 +35,10 @@
         <a href="#"><img src="{% static 'img/instagram.svg' %}" alt="Instagram"></a>
         <a href="#"><img src="{% static 'img/telefone.svg' %}" alt="Telefone"></a>
     </div>
+
+    {% include 'partials/botao_SOS.html' %}
+
+    <script src="{% static 'js/home_vitima.js' %}"></script>
 
 </body>
 </html>

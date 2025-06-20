@@ -14,7 +14,7 @@ body {
     overflow: hidden;
     font-family: 'Roboto', sans-serif;
     color: #666;
-    background-color: #F4F4F4;
+    background-color: #fff;
 }
 
 /* --- Layout Principal --- */
@@ -69,12 +69,11 @@ body {
 }
 
 .sos-button {
-    background-color: #b7a8dc;
+    background-color: #b3a4d6;
     color: white;
     padding: 18px 35px;
     border-radius: 26px; 
     cursor: pointer;
-    /* MUDANÇA FINAL 👇: Sombra exata do Figma */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-size: 4rem; 
     font-weight: 400; 
@@ -95,7 +94,7 @@ body {
 }
 
 .nav-button {
-    background-color: #b7a8dc;
+    background-color: #b3a4d6;
     color: white;
     padding: 12px 20px;
     border-radius: 26px;
@@ -132,4 +131,117 @@ body {
 
 .icons img:hover {
     opacity: 1;
+}
+
+/* --- ESTILOS DOS POP-UPS (MODAIS) --- */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    
+    /* MUDANÇA AQUI 👇: Removemos o Flexbox para usar posicionamento absoluto no filho */
+}
+
+.modal-overlay.escondido {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal {
+    background-color: #D9D9D9;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    
+  
+    position: absolute;
+    top: 50%;
+    left: 55%; 
+    transform: translate(-50%, -50%);
+}
+
+.logo-modal {
+    width: 50px;
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
+.modal h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+.modal p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.modal-botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.modal-btn-confirmar {
+    background-color: #b3a4d6;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    width: 80%;
+    transition: background-color 0.3s;
+}
+
+.modal-btn-confirmar:hover {
+    background-color: #9a8bc4;
+}
+
+.modal-btn-cancelar {
+    background-color: #e0e0e0;
+    color: #555;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 60%;
+    transition: background-color 0.3s;
+}
+
+.modal-btn-cancelar:hover {
+    background-color: #d1d1d1;
+}
+
+.modal-btn-fechar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+}
+
+.modal .aguarde-text {
+    font-weight: bold;
+    font-size: 1.8rem; 
+    color: #555;
 }

@@ -1,0 +1,21 @@
+{% load static %}
+
+<div id="modal-confirmacao" class="modal-overlay escondido">
+    <div class="modal">
+        <img src="{% static 'img/logo-icon.svg' %}" alt="Logo" class="logo-modal">
+        <h2>Confirmar chamado de ajuda</h2>
+        <div class="modal-botoes">
+            <button id="btn-confirmar-chamado" class="modal-btn-confirmar">Confirmar</button>
+            <button id="btn-cancelar-chamado" class="modal-btn-cancelar">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<div id="modal-acionada" class="modal-overlay escondido">
+    <div class="modal">
+        <button id="btn-fechar-acionada" class="modal-btn-fechar">X</button>
+        <h2>A polícia foi acionada</h2>
+        <p class="aguarde-text">aguarde</p>
+    </div>
+</div>
+</div>
