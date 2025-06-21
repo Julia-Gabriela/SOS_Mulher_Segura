@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F4F4F4;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+/* ===== Botão Voltar ===== */
+.back-button {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    background-color: #b7a8dc;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.3);
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background-color: #a48ed1;
+}
+
+
+/* ===== Container ===== */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  /* Centraliza verticalmente */
+    height: 100vh;  /* Garante altura total da tela */
+    gap: 20px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #444;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* ===== Conteúdo ===== */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    align-items: flex-start;
+}
+
+h2 {
+    font-size: 1.3rem;
+    color: #555;
+    font-weight: 500;
+    text-align: left;
+}
+
+.info-box {
+    background-color: #e5e5e5;
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.info-box a {
+    color: #6b8de3;
+    text-decoration: none;
+}
+
+.info-box a:hover {
+    text-decoration: underline;
+}
+
+p {
+    color: #555;
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+.alerta {
+    font-size: 0.9rem;
+    color: #555;
+    text-align: left;
+}
+
+/* ===== Ícones Rodapé ===== */
+.icons {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    display: flex;
+    gap: 20px;
+    z-index: 100;
+}
+
+.icons img {
+    width: 22px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.icons img:hover {
+    opacity: 1;
+}

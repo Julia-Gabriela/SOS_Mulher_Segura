@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajuda</title>
+    <link rel="stylesheet" href="{% static 'css/ajuda.css' %}">
+</head>
+
+<body>
+
+    <a href="{% url 'home_vitima' %}" class="back-button">Voltar</a>
+
+    <div class="container">
+        <img src="{% static 'img/logo-icon.svg' %}" alt="Logo" class="logo">
+        <h1>Ajuda</h1>
+
+        <div class="content">
+            <h2>Contatos úteis</h2>
+            <div class="info-box">
+                <p><a href="tel:180">180</a> – Central de Atendimento à Mulher</p>
+                <p><a href="tel:190">190</a> – Polícia Militar</p>
+                <p>ONGs e redes de apoio (<a href="https://www.ajuda.ong.br" target="_blank">www.ajuda.ong.br</a>)</p>
+            </div>
+
+            <p class="alerta">Se você estiver em perigo, entre em contato com as autoridades imediatamente. <br>
+            Use o botão de alerta caso precise de ajuda urgente.</p>
+
+            <h2>Precisa de ajuda?</h2>
+            <p>Entre em contato pelo e-mail:</p>
+            <div class="info-box">
+                <p><a href="mailto:suporte@sosmulhersegura.gov.br">suporte@sosmulhersegura.gov.br</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="icons">
+        <a href="#"><img src="{% static 'img/youtube.svg' %}" alt="YouTube"></a>
+        <a href="#"><img src="{% static 'img/instagram.svg' %}" alt="Instagram"></a>
+        <a href="#"><img src="{% static 'img/telefone.svg' %}" alt="Telefone"></a>
+    </footer>
+
+</body>
+
+</html>

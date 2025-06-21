@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import ajuda_view
 
 urlpatterns = [
     path('cadastrar/', views.cadastrar_usuario, name='cadastrar_usuario'),
@@ -13,4 +14,5 @@ urlpatterns = [
     path('contatos/adicionar/', views.adicionar_contato, name='adicionar_contato'),
     path('contatos/editar/<int:id_contato>/', views.editar_contato, name='editar_contato'),
     path('contatos/excluir/<int:id_contato>/', views.excluir_contato, name='excluir_contato'),
+    path('ajuda/', ajuda_view, name='ajuda'),
 ]

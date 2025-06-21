@@ -142,3 +142,6 @@ def excluir_contato(request, id_contato):
     contato.delete()
     messages.success(request, 'Contato excluído com sucesso!')
     return redirect('gerenciar_contatos')
+
+def ajuda_view(request):
+    return render(request, 'home_vitima/ajuda.html')
