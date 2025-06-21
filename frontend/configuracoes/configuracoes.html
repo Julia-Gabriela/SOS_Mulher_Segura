@@ -1,4 +1,3 @@
-</html>
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -20,7 +19,10 @@
 
         <div class="config-options">
             <a href="{% url 'medidas_protetivas' %}" class="config-button">Gerenciar medidas protetivas</a>
-            <a href="#" class="config-button">Ativar envio da localização</a>
+
+            <!-- Botão que abre o popup -->
+            <a href="#" class="config-button" onclick="abrirPopup()">Ativar envio da localização</a>
+
             <a href="#" class="config-button">Gerenciar contatos de confiança</a>
             <a href="{% url 'sair' %}" class="config-button sair">Sair</a>
         </div>
@@ -32,5 +34,12 @@
         <a href="#"><img src="{% static 'img/telefone.svg' %}" alt="Telefone"></a>
     </footer>
 
+    <!-- Inclui o popup -->
+    {% include 'partials/popup_localizacao.html' %}
+
+    <!-- Script -->
+    <script src="{% static 'js/popup.js' %}"></script>
 
 </body>
+
+</html>

@@ -106,3 +106,69 @@ html, body {
 .icons img:hover {
     opacity: 1;
 }
+
+/* =================== POPUP =================== */
+.popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.popup-content h2 {
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.popup-content p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.popup-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.popup-actions button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+/* Botão Sim */
+.popup-actions button:first-child {
+    background-color: #b7a8dc;
+    color: white;
+}
+
+.popup-actions button:first-child:hover {
+    background-color: #a48ed1;
+}
+
+/* Botão Cancelar */
+.popup-actions button:last-child {
+    background-color: #ccc;
+    color: black;
+}
+
+.popup-actions button:last-child:hover {
+    background-color: #bbb;
+}
