@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F4F4F4;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+/* Botão voltar */
+.back-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background-color: #b7a8dc;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.3);
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background-color: #a48ed1;
+}
+
+/* Container centralizado */
+.medidas-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 20px;
+    text-align: center;
+}
+
+/* Logo */
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+/* Título */
+.medidas-container h1 {
+    font-size: 2rem;
+    color: #444;
+    font-weight: 500;
+}
+
+/* Caixas de status */
+.status-box {
+    background-color: #e5e5e5;
+    padding: 20px 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    position: relative; /* 👈 Permite posicionar absoluto */
+    font-size: 1.1rem;
+}
+
+.label {
+    color: #666;
+    font-weight: 400;
+    position: absolute;
+    left: 30px; /* 👈 Alinha na esquerda da box */
+}
+
+.status {
+    font-weight: 500;
+    margin: 0 auto; /* 👈 Centraliza no meio da box */
+}
+
+.status.ativa {
+    color: green;
+}
+
+.status.solicitada {
+    color: orange;
+}
+
+.status.revogada {
+    color: red;
+}
+
+
+/* Ícones rodapé */
+.icons {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    display: flex;
+    gap: 20px;
+    z-index: 100;
+}
+
+.icons img {
+    width: 22px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.icons img:hover {
+    opacity: 1;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medidas Protetivas</title>
+    <link rel="stylesheet" href="{% static 'css/medidas_protetivas.css' %}">
+</head>
+<body>
+
+    <!-- Botão voltar -->
+    <a href="{% url 'configuracoes' %}" class="back-button">Voltar</a>
+
+    <!-- Container principal -->
+    <div class="medidas-container">
+        <img src="{% static 'img/logo-icon.svg' %}" alt="Logo" class="logo">
+        <h1>Gerenciar medidas protetivas</h1>
+
+        {% for medida in medidas %}
+        <div class="status-box">
+            <span class="label">Status:</span>
+            <span class="status {{ medida.classe }}">{{ medida.status }}</span>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Ícones rodapé -->
+    <div class="icons">
+        <img src="{% static 'imagens/youtube.png' %}" alt="YouTube">
+        <img src="{% static 'imagens/instagram.png' %}" alt="Instagram">
+        <img src="{% static 'imagens/telefone.png' %}" alt="Telefone">
+    </div>
+
+</body>
+</html>

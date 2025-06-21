@@ -4,6 +4,8 @@ from .models import Usuario
 from django.utils.dateparse import parse_date
 from django.contrib.auth.hashers import make_password
 from denuncias.models import Denuncia
+from django.contrib.auth import logout
+
 
 @csrf_exempt
 def cadastrar_usuario(request):
@@ -77,3 +79,18 @@ def historico_denuncia(request):
     }
 
     return render(request, 'denuncias/historico_denuncia.html', context)
+
+def configuracoes(request):
+    return render(request, 'configuracoes/configuracoes.html')
+
+def sair(request):
+    logout(request)
+    return redirect('home') 
+
+def medidas_protetivas(request):
+    medidas = [
+        {'status': 'Ativa', 'classe': 'ativa'},
+        {'status': 'Solicitada', 'classe': 'solicitada'},
+        {'status': 'Revogada', 'classe': 'revogada'},
+    ]
+    return render(request, 'configuracoes/medidas_protetivas.html', {'medidas': medidas})

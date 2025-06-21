@@ -1,12 +1,14 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
     <link rel="stylesheet" href="{% static 'css/home_vitima.css' %}">
 </head>
+
 <body>
 
     <div class="container">
@@ -19,11 +21,11 @@
             <img src="{% static 'img/logo-icon.svg' %}" alt="Logo" class="logo">
 
             <a href="#" id="sos-button-trigger" class="sos-button">SOS</a>
-            
+
             <div class="nav-buttons">
                 <a href="{% url 'registrar_denuncia' %}" class="nav-button">Registar denúncia</a>
                 <a href="{% url 'historico_denuncia' %}" class="nav-button">Histórico de denúncias</a>
-                <a href="#" class="nav-button">Configurações</a>
+                <a href="{% url 'configuracoes' %}" class="nav-button">Configurações</a>
                 <a href="#" class="nav-button">Ajuda</a>
             </div>
         </div>
@@ -41,4 +43,5 @@
     <script src="{% static 'js/home_vitima.js' %}"></script>
 
 </body>
+
 </html>

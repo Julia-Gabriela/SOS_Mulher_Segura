@@ -1,0 +1,36 @@
+</html>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações</title>
+    <link rel="stylesheet" href="{% static 'css/configuracoes.css' %}">
+</head>
+
+<body>
+
+    <a href="{% url 'home_vitima' %}" class="back-button">Voltar</a>
+
+    <div class="config-container">
+        <img src="{% static 'img/logo-icon.svg' %}" alt="Logo" class="logo">
+        <h1>Configurações</h1>
+
+        <div class="config-options">
+            <a href="{% url 'medidas_protetivas' %}" class="config-button">Gerenciar medidas protetivas</a>
+            <a href="#" class="config-button">Ativar envio da localização</a>
+            <a href="#" class="config-button">Gerenciar contatos de confiança</a>
+            <a href="{% url 'sair' %}" class="config-button sair">Sair</a>
+        </div>
+    </div>
+
+    <footer class="icons">
+        <a href="#"><img src="{% static 'img/youtube.svg' %}" alt="YouTube"></a>
+        <a href="#"><img src="{% static 'img/instagram.svg' %}" alt="Instagram"></a>
+        <a href="#"><img src="{% static 'img/telefone.svg' %}" alt="Telefone"></a>
+    </footer>
+
+
+</body>

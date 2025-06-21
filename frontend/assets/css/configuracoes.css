@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F4F4F4;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+/* =================== Botão Voltar =================== */
+.back-button {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    background-color: #b7a8dc;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.3);
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background-color: #a48ed1;
+}
+
+/* =================== Container Central =================== */
+.config-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 20px;
+    text-align: center;
+}
+
+/* =================== Logo =================== */
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+/* =================== Título =================== */
+.config-container h1 {
+    font-size: 2rem;
+    color: #444;
+    font-weight: 500;
+}
+
+/* =================== Bloco de Botões =================== */
+.config-options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 700px;
+}
+
+/* =================== Botões =================== */
+.config-button {
+    background-color: #e5e5e5;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: #444;
+    font-size: 1.1rem;
+    font-weight: 400;
+    transition: background-color 0.3s;
+}
+
+.config-button:hover {
+    background-color: #d3d3d3;
+}
+
+/* =================== Botão Sair =================== */
+.sair {
+    color: red;
+}
+
+/* =================== Ícones do Rodapé =================== */
+.icons {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    display: flex;
+    gap: 20px;
+    z-index: 100;
+}
+
+.icons img {
+    width: 22px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.icons img:hover {
+    opacity: 1;
+}
