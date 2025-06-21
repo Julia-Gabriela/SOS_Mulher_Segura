@@ -12,11 +12,22 @@ class Denuncia(models.Model):
     data_hora = models.DateTimeField(null=False)
     localizacao = models.CharField(max_length=255, null=False, blank=False)
     provas_anexadas = models.BooleanField(default=False)
-    arquivo = models.CharField(max_length=255, blank=True, null=True)  # Caminho do arquivo
+    arquivo = models.CharField(max_length=255, blank=True, null=True)
+
+    status = models.CharField(
+        max_length=20,
+        choices=[
+            ('pendente', 'Pendente'),
+            ('analise', 'Em análise'),
+            ('finalizado', 'Finalizado')
+        ],
+        default='pendente'
+    )
 
     class Meta:
         managed = True
-        db_table = 'denuncias'  # ✅ Removi managed=False
+        db_table = 'denuncias'
 
     def __str__(self):
         return f"Denúncia {self.id_denuncia} - {self.cpf}"
+

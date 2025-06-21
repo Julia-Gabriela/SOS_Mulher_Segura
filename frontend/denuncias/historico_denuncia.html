@@ -17,59 +17,35 @@
         <h1>Histórico de denúncias</h1>
 
         <div class="lista">
-
+            {% for denuncia in denuncias %}
             <div class="item">
                 <div class="left">
-                    <span class="ocorrencia">Ocorrência nº 57960</span>
+                    <span class="ocorrencia">Ocorrência nº {{ denuncia.id_denuncia }}</span>
                 </div>
                 <div class="center">
-                    <span class="status pendente">Pendente</span>
+                    <span class="status 
+                        {% if denuncia.status == 'pendente' %}pendente
+                        {% elif denuncia.status == 'analise' %}analise
+                        {% else %}finalizado
+                        {% endif %}
+                    ">
+                        {% if denuncia.status == 'pendente' %}
+                            Pendente
+                        {% elif denuncia.status == 'analise' %}
+                            Em análise
+                        {% else %}
+                            Finalizado
+                        {% endif %}
+                    </span>
                 </div>
                 <div class="right">
-                    <span class="data">29/03/2022</span>
+                    <span class="data">{{ denuncia.data_hora|date:"d/m/Y" }}</span>
                     <span class="arrow">&#9660;</span>
                 </div>
             </div>
-
-            <div class="item">
-                <div class="left">
-                    <span class="ocorrencia">Ocorrência nº 94869</span>
-                </div>
-                <div class="center">
-                    <span class="status analise">Em análise</span>
-                </div>
-                <div class="right">
-                    <span class="data">01/02/2022</span>
-                    <span class="arrow">&#9660;</span>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="left">
-                    <span class="ocorrencia">Ocorrência nº 47539</span>
-                </div>
-                <div class="center">
-                    <span class="status finalizado">Finalizado</span>
-                </div>
-                <div class="right">
-                    <span class="data">19/05/2021</span>
-                    <span class="arrow">&#9660;</span>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="left">
-                    <span class="ocorrencia">Ocorrência nº 75869</span>
-                </div>
-                <div class="center">
-                    <span class="status finalizado">Finalizado</span>
-                </div>
-                <div class="right">
-                    <span class="data">10/01/2021</span>
-                    <span class="arrow">&#9660;</span>
-                </div>
-            </div>
-
+            {% empty %}
+            <p>Você não possui denúncias registradas.</p>
+            {% endfor %}
         </div>
     </div>
 

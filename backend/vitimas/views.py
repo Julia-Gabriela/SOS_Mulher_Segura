@@ -3,7 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import Usuario
 from django.utils.dateparse import parse_date
 from django.contrib.auth.hashers import make_password
-
+from denuncias.models import Denuncia
 
 @csrf_exempt
 def cadastrar_usuario(request):
@@ -61,4 +61,15 @@ def home_vitima(request):
     return render(request, 'home_vitima/home_vitima.html', context)
 
 def historico_denuncia(request):
-    return render(request, 'denuncias/historico_denuncia.html')
+    cpf = request.session.get('cpf')
+
+    if not cpf:
+        return render(request, 'erro.html', {'mensagem': 'Usuário não autenticado.'})
+
+    denuncias = Denuncia.objects.filter(cpf=cpf).order_by('-data_hora')
+
+    context = {
+        'denuncias': denuncias
+    }
+
+    return render(request, 'denuncias/historico_denuncia.html', context)

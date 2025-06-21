@@ -48,3 +48,16 @@ def registrar_denuncia(request):
     return render(request, 'denuncias/registrar_denuncia.html', {'cpf': cpf})
 def denuncia_enviada(request):
     return render(request, 'denuncias/denuncia_enviada.html')
+def historico_denuncia(request):
+    cpf = request.session.get('cpf')
+
+    if not cpf:
+        return render(request, 'erro.html', {'mensagem': 'Usuário não autenticado.'})
+
+    denuncias = Denuncia.objects.filter(cpf=cpf).order_by('-data_hora')
+
+    context = {
+        'denuncias': denuncias
+    }
+
+    return render(request, 'denuncias/historico_denuncia.html', context)
