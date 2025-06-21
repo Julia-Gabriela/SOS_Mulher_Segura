@@ -1,17 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
-body {
+
+* {
     margin: 0;
     padding: 0;
-    background-color: #F4F4F4;
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-sizing: border-box;
 }
 
-/* Botão voltar */
+body {
+    background-color: #F4F4F4;
+    font-family: 'Roboto Flex', sans-serif;
+    color: #333;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Botão Voltar */
 .back-button {
     position: absolute;
     top: 20px;
@@ -29,12 +32,13 @@ body {
     background-color: #a48ed1;
 }
 
-/* Container centralizado na tela */
+/* Container Central */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100%;
 }
 
 /* Logo */
@@ -46,20 +50,21 @@ body {
 /* Título */
 h1 {
     color: #555;
-    margin-bottom: 30px;
     font-weight: 500;
+    margin-bottom: 30px;
 }
 
-/* Lista */
+/* Lista de Denúncias */
 .lista {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    max-height: 60vh;
+    gap: 12px;
+    max-height: 65vh;
     overflow-y: auto;
+    padding-right: 8px;
 }
 
-/* Cada item */
+/* Item da Lista */
 .item {
     background-color: #eaeaea;
     border-radius: 10px;
@@ -68,17 +73,25 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 1px 1px 4px rgba(0,0,0,0.15);
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.15);
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.item:hover {
+    background-color: #e1e1e1;
 }
 
 /* Divisões internas */
 .left {
     flex: 1;
+    font-weight: 500;
 }
 
 .center {
     flex: 1;
     text-align: center;
+    font-weight: 500;
 }
 
 .right {
@@ -87,11 +100,7 @@ h1 {
     justify-content: flex-end;
     align-items: center;
     gap: 10px;
-}
-
-/* Texto */
-.ocorrencia {
-    font-weight: 500;
+    color: #555;
 }
 
 .data {
@@ -108,23 +117,57 @@ h1 {
 }
 
 .status.analise {
-    color: orange;
+    color: #e09000;
 }
 
 .status.finalizado {
     color: gray;
 }
 
-/* Seta */
+/* Setas */
 .arrow {
     font-size: 18px;
     cursor: pointer;
-    color: #555;
+    transition: transform 0.3s;
     user-select: none;
 }
 
-.arrow:hover {
-    transform: scale(1.2);
+.arrow.rotate {
+    transform: rotate(180deg);
+}
+
+/* Detalhes (Ocultos por padrão) */
+.detalhes {
+    display: none;
+    background-color: #eaeaea;
+    border: 2px solid #b7a8dc;
+    border-radius: 10px;
+    padding: 15px 25px;
+    width: 700px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.15);
+    line-height: 1.4;
+    animation: fade 0.3s ease-in-out;
+}
+
+.detalhes.active {
+    display: block;
+}
+
+/* Links de arquivos */
+.detalhes a {
+    color: #3f78d1;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.detalhes a:hover {
+    color: #2a5eaa;
+}
+
+/* Animação de aparição */
+@keyframes fade {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 /* Ícones redes sociais */

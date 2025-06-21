@@ -23,28 +23,27 @@
                     <span class="ocorrencia">Ocorrência nº {{ denuncia.id_denuncia }}</span>
                 </div>
                 <div class="center">
-                    <span class="status 
-                        {% if denuncia.status == 'pendente' %}pendente
-                        {% elif denuncia.status == 'analise' %}analise
-                        {% else %}finalizado
-                        {% endif %}
-                    ">
-                        {% if denuncia.status == 'pendente' %}
-                            Pendente
-                        {% elif denuncia.status == 'analise' %}
-                            Em análise
-                        {% else %}
-                            Finalizado
-                        {% endif %}
-                    </span>
+                    <span class="status {{ denuncia.status|lower }}">{{ denuncia.status }}</span>
                 </div>
                 <div class="right">
                     <span class="data">{{ denuncia.data_hora|date:"d/m/Y" }}</span>
                     <span class="arrow">&#9660;</span>
                 </div>
             </div>
-            {% empty %}
-            <p>Você não possui denúncias registradas.</p>
+
+            <div class="detalhes">
+                <p><strong>Descrição:</strong> {{ denuncia.descricao }}</p>
+                <p><strong>Localização:</strong> {{ denuncia.localizacao }}</p>
+                <p><strong>Data e Hora:</strong> {{ denuncia.data_hora|date:"d/m/Y H:i" }}</p>
+
+                {% if denuncia.provas_anexadas %}
+                    <p><strong>Arquivos anexados:</strong> 
+                        <a href="/media/{{ denuncia.arquivo }}" target="_blank">{{ denuncia.arquivo }}</a>
+                    </p>
+                {% else %}
+                    <p><strong>Arquivos anexados:</strong> Nenhum</p>
+                {% endif %}
+            </div>
             {% endfor %}
         </div>
     </div>
@@ -55,6 +54,17 @@
         <a href="#"><img src="{% static 'img/telefone.svg' %}" alt="Telefone"></a>
     </div>
 
-</body>
+    <script>
+        const arrows = document.querySelectorAll('.arrow');
 
+        arrows.forEach((arrow, index) => {
+            arrow.addEventListener('click', () => {
+                const detalhes = document.querySelectorAll('.detalhes')[index];
+                detalhes.classList.toggle('active');
+                arrow.classList.toggle('rotate');
+            });
+        });
+    </script>
+
+</body>
 </html>

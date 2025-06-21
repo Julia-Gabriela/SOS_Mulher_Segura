@@ -5,11 +5,12 @@ from vitimas.models import Usuario
 from datetime import datetime
 from django.core.files.storage import FileSystemStorage
 
+
+# 🔹 Registrar Denúncia
 def registrar_denuncia(request):
     cpf = request.session.get('cpf')
-    
+
     if request.method == 'POST':
-        cpf = request.POST.get('cpf')
         descricao = request.POST.get('descricao')
         localizacao = request.POST.get('localizacao')
         data = request.POST.get('data')
@@ -46,8 +47,14 @@ def registrar_denuncia(request):
             messages.error(request, f"Ocorreu um erro: {e}")
 
     return render(request, 'denuncias/registrar_denuncia.html', {'cpf': cpf})
+
+
+# 🔹 Tela de sucesso após registro
 def denuncia_enviada(request):
     return render(request, 'denuncias/denuncia_enviada.html')
+
+
+# 🔹 Histórico de Denúncias com Detalhes
 def historico_denuncia(request):
     cpf = request.session.get('cpf')
 
