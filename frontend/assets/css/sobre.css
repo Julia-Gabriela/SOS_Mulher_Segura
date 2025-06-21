@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-
 * {
   margin: 0;
   padding: 0;
@@ -11,9 +10,7 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: #F4F4F4;
   overflow-x: hidden;
-  height: 100vh;
 }
-
 
 nav {
   z-index: 2;
@@ -60,18 +57,17 @@ nav .active a {
   top: 0;
   left: 0;
   height: 100%;
-  width: 50vw;
-  max-width: none;
+  width: 50%;
   z-index: 0;
   object-fit: cover;
   pointer-events: none;
+  overflow: hidden;
 }
 
 .about-area {
-  padding: 20px 80px;
-  width: 100%;
-  max-width: 650px;
-  margin-left: 55%; 
+  padding: 20px 40px;
+  width: calc(50% - 80px);
+  margin-left: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,26 +87,26 @@ nav .active a {
   height: auto;
 }
 
-.about-text h2, .collaborators h2 {
-    font-size: 2rem;
-    font-weight: 500;
-    color: #333;
-    margin-bottom: 15px;
+.about-text h2,
+.collaborators h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 15px;
 }
 
 .about-text p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #555;
-    text-align: justify;
-    margin-bottom: 15px; 
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+  margin-bottom: 15px;
 }
 
 .collaborators img {
-    max-width: 250px;
-    height: auto;
+  max-width: 250px;
+  height: auto;
 }
-
 
 footer {
   position: fixed;
@@ -122,15 +118,38 @@ footer {
 }
 
 footer .icons {
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
   display: flex;
   gap: 20px;
-  z-index: 100;
 }
 
 footer .icons img {
   width: 22px;
   opacity: 0.6;
+}
+
+/* -------- Responsivo -------- */
+@media (max-width: 1024px) {
+  .flowers {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: unset;
+    bottom: 0;
+    opacity: 0.2;
+  }
+
+  .about-area {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  nav {
+    padding: 20px;
+    justify-content: space-between;
+  }
+
+  .login-btn {
+    right: 20px;
+  }
 }

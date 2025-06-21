@@ -126,11 +126,10 @@ nav .active {
 }
 
 .welcome-buttons {
-  font-family: 'Roboto', sans-serif;
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* ← De column para row */
   gap: 20px;
-  align-self: flex-end;
+  align-self: center;  /* Centraliza */
 }
 
 
@@ -163,8 +162,9 @@ h1 {
 /* Botões */
 .btn-group {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  flex-direction: row; /* ← Antes era column */
+  gap: 20px;
+  justify-content: center;
 }
 
 .btn {
