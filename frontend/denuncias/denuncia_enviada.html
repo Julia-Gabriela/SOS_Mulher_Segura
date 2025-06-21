@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denúncia Enviada</title>
+    <link rel="stylesheet" href="{% static 'css/denuncia_enviada.css' %}">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="content">
+            <img src="{% static 'img/logo-icon.svg' %}" alt="Ícone de denúncia" class="icon">
+            <h1>Denúncia enviada</h1>
+            <div class="buttons">
+                <a href="{% url 'home_vitima' %}" class="btn">Voltar ao início</a>
+                <a href="{% url 'registrar_denuncia' %}" class="btn">Fazer nova denúncia</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="icons">
+        <a href="#"><img src="{% static 'img/youtube.svg' %}" alt="YouTube"></a>
+        <a href="#"><img src="{% static 'img/instagram.svg' %}" alt="Instagram"></a>
+        <a href="#"><img src="{% static 'img/telefone.svg' %}" alt="Telefone"></a>
+    </div>
+
+</body>
+
+</html>

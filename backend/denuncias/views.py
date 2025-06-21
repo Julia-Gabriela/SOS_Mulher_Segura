@@ -37,7 +37,7 @@ def registrar_denuncia(request):
             )
 
             messages.success(request, "Denúncia registrada com sucesso!")
-            return redirect('home_vitima')
+            return redirect('denuncia_enviada')
 
         except Usuario.DoesNotExist:
             messages.error(request, "CPF não encontrado.")
@@ -46,3 +46,5 @@ def registrar_denuncia(request):
             messages.error(request, f"Ocorreu um erro: {e}")
 
     return render(request, 'denuncias/registrar_denuncia.html', {'cpf': cpf})
+def denuncia_enviada(request):
+    return render(request, 'denuncias/denuncia_enviada.html')
