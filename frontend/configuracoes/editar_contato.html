@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Contato</title>
+    <link rel="stylesheet" href="{% static 'css/editar_contato.css' %}">
+</head>
+
+<body>
+
+    <a href="{% url 'gerenciar_contatos' %}" class="back-button">Voltar</a>
+
+    <div class="container">
+        <img src="{% static 'img/logo-icon.svg' %}" alt="Logo" class="logo">
+        <h1>Editar contato</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" value="{{ contato.nome_contato }}" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="{{ contato.email }}" required>
+
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone" name="telefone" value="{{ contato.telefone }}" required>
+
+            <button type="submit">Editar</button>
+        </form>
+    </div>
+
+    <footer class="icons">
+        <a href="#"><img src="{% static 'img/youtube.svg' %}" alt="YouTube"></a>
+        <a href="#"><img src="{% static 'img/instagram.svg' %}" alt="Instagram"></a>
+        <a href="#"><img src="{% static 'img/telefone.svg' %}" alt="Telefone"></a>
+    </footer>
+
+</body>
+
+</html>

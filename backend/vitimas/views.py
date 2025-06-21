@@ -5,7 +5,9 @@ from django.utils.dateparse import parse_date
 from django.contrib.auth.hashers import make_password
 from denuncias.models import Denuncia
 from django.contrib.auth import logout
-
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import ContatoConfianca
+from django.contrib import messages
 
 @csrf_exempt
 def cadastrar_usuario(request):
@@ -94,3 +96,49 @@ def medidas_protetivas(request):
         {'status': 'Revogada', 'classe': 'revogada'},
     ]
     return render(request, 'configuracoes/medidas_protetivas.html', {'medidas': medidas})
+
+def gerenciar_contatos(request):
+    cpf_usuario = request.session.get('cpf')
+    contatos = ContatoConfianca.objects.filter(cpf=cpf_usuario)
+    return render(request, 'configuracoes/gerenciar_contatos.html', {'contatos': contatos})
+
+
+def adicionar_contato(request):
+    if request.method == 'POST':
+        cpf_usuario = request.session.get('cpf')
+        nome = request.POST.get('nome')
+        telefone = request.POST.get('telefone')
+        email = request.POST.get('email')
+
+        ContatoConfianca.objects.create(
+            cpf=cpf_usuario,
+            nome_contato=nome,
+            telefone=telefone,
+            email=email
+        )
+        messages.success(request, 'Contato adicionado com sucesso!')
+        return redirect('gerenciar_contatos')
+
+    return render(request, 'configuracoes/adicionar_contato.html')
+
+
+def editar_contato(request, id_contato):
+    contato = get_object_or_404(ContatoConfianca, id_contato=id_contato)
+
+    if request.method == 'POST':
+        contato.nome_contato = request.POST.get('nome')
+        contato.telefone = request.POST.get('telefone')
+        contato.email = request.POST.get('email')
+        contato.save()
+
+        messages.success(request, 'Contato atualizado com sucesso!')
+        return redirect('gerenciar_contatos')
+
+    return render(request, 'configuracoes/editar_contato.html', {'contato': contato})
+
+
+def excluir_contato(request, id_contato):
+    contato = get_object_or_404(ContatoConfianca, id_contato=id_contato)
+    contato.delete()
+    messages.success(request, 'Contato excluído com sucesso!')
+    return redirect('gerenciar_contatos')

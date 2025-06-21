@@ -22,3 +22,17 @@ class Usuario(models.Model):
 
     def __str__(self):
         return self.nome
+    
+class ContatoConfianca(models.Model):
+    id_contato = models.AutoField(primary_key=True)
+    cpf = models.CharField(max_length=14)
+    nome_contato = models.CharField(max_length=100)
+    telefone = models.CharField(max_length=15)
+    email = models.CharField(max_length=100)
+
+    class Meta:
+        db_table = 'contatos_confianca'  # Nome EXATO da tabela no banco
+        managed = False 
+
+    def __str__(self):
+        return f'{self.nome_contato} ({self.cpf})'

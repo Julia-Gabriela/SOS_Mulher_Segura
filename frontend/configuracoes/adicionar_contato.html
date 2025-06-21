@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Contato</title>
+    <link rel="stylesheet" href="{% static 'css/adicionar_contato.css' %}">
+</head>
+
+<body>
+
+    <a href="{% url 'gerenciar_contatos' %}" class="back-button">Voltar</a>
+
+    <div class="container">
+        <img src="{% static 'img/logo-icon.svg' %}" alt="Logo" class="logo">
+        <h1>Adicionar contato</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone" name="telefone" required>
+
+            <button type="submit">Adicionar</button>
+        </form>
+    </div>
+
+    <footer class="icons">
+        <a href="#"><img src="{% static 'img/youtube.svg' %}" alt="YouTube"></a>
+        <a href="#"><img src="{% static 'img/instagram.svg' %}" alt="Instagram"></a>
+        <a href="#"><img src="{% static 'img/telefone.svg' %}" alt="Telefone"></a>
+    </footer>
+
+</body>
+
+</html>

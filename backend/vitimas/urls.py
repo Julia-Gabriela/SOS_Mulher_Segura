@@ -9,4 +9,8 @@ urlpatterns = [
     path('configuracoes/', views.configuracoes, name='configuracoes'),
     path('sair/', views.sair, name='sair'),
     path('medidas_protetivas/', views.medidas_protetivas, name='medidas_protetivas'),
+    path('contatos/', views.gerenciar_contatos, name='gerenciar_contatos'),
+    path('contatos/adicionar/', views.adicionar_contato, name='adicionar_contato'),
+    path('contatos/editar/<int:id_contato>/', views.editar_contato, name='editar_contato'),
+    path('contatos/excluir/<int:id_contato>/', views.excluir_contato, name='excluir_contato'),
 ]

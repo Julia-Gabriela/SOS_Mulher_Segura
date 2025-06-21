@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Contatos de confiança</title>
+    <link rel="stylesheet" href="{% static 'css/contatos.css' %}">
+</head>
+<body>
+
+<a href="{% url 'home_vitima' %}" class="back-button">Voltar</a>
+
+<div class="container">
+    <img src="{% static 'img/logo-icon.svg' %}" alt="Logo" class="logo">
+    <h1>Gerenciar contatos de confiança</h1>
+
+    <div class="contato-lista">
+        {% for contato in contatos %}
+        <div class="contato-item">
+            <span>{{ contato.nome_contato }}</span>
+            <a href="{% url 'editar_contato' contato.id_contato %}" class="editar">Editar</a>
+            <a href="{% url 'excluir_contato' contato.id_contato %}" class="excluir">Excluir</a>
+        </div>
+        {% empty %}
+        <p>Você ainda não tem contatos cadastrados.</p>
+        {% endfor %}
+    </div>
+
+    <a href="{% url 'adicionar_contato' %}" class="adicionar">Adicionar</a>
+</div>
+
+<footer class="icons">
+    <a href="#"><img src="{% static 'img/youtube.svg' %}" alt="YouTube"></a>
+    <a href="#"><img src="{% static 'img/instagram.svg' %}" alt="Instagram"></a>
+    <a href="#"><img src="{% static 'img/telefone.svg' %}" alt="Telefone"></a>
+</footer>
+
+</body>
+</html>

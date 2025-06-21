@@ -15,7 +15,7 @@ body {
 
 /* --- Botão Voltar (Direita) --- */
 .back-button {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 30px;
     background-color: #b7a8dc;
@@ -23,9 +23,8 @@ body {
     padding: 10px 30px;
     border-radius: 10px;
     text-decoration: none;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.3);
     transition: background 0.3s;
-    font-weight: 500;
 }
 
 .back-button:hover {
