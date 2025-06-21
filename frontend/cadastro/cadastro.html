@@ -22,7 +22,7 @@
       </div>
 
       {% if erro %}
-        <p style="color:red;">{{ erro }}</p>
+      <p style="color:red;">{{ erro }}</p>
       {% endif %}
 
       <form method="POST" action="{% url 'cadastrar_usuario' %}">
@@ -46,6 +46,13 @@
           <input type="text" name="complemento" placeholder="Complemento" />
         </div>
 
+        <div class="double">
+          <input type="text" name="cidade" placeholder="Cidade" />
+          <select name="uf" id="uf">
+            <option value="">UF</option>
+          </select>
+        </div>
+
         <input type="password" name="senha" placeholder="Senha" required />
 
         <button type="submit">Cadastrar</button>
@@ -58,6 +65,9 @@
       </div>
     </div>
   </div>
+
+  <script src="{% static 'js/cadastro.js' %}"></script>
+
 </body>
 
 </html>

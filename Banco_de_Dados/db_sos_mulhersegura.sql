@@ -17,6 +17,9 @@ CREATE TABLE IF NOT EXISTS usuarios (
     complemento VARCHAR(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+ALTER TABLE usuarios ADD COLUMN cidade VARCHAR(100);
+ALTER TABLE usuarios ADD COLUMN uf VARCHAR(2);
+
 -- Tabela de medidas protetivas
 CREATE TABLE IF NOT EXISTS medidas_protetivas (
     id_medida INT PRIMARY KEY AUTO_INCREMENT,
@@ -82,3 +85,7 @@ CREATE TABLE IF NOT EXISTS configuracoes (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 SELECT * FROM usuarios;
 SELECT * FROM denuncias;
+
+ALTER TABLE denuncias
+ADD COLUMN arquivo VARCHAR(255);
+ALTER TABLE denuncias ADD COLUMN status VARCHAR(20) DEFAULT 'pendente';

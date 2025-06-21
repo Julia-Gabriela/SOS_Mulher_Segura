@@ -18,6 +18,8 @@ def cadastrar_usuario(request):
             bairro = request.POST.get('bairro')
             numero = request.POST.get('numero')
             complemento = request.POST.get('complemento')
+            cidade = request.POST.get('cidade')
+            uf = request.POST.get('uf')
             senha = request.POST.get('senha')
 
             if not nome or not cpf or not email or not senha:
@@ -37,7 +39,9 @@ def cadastrar_usuario(request):
                 cep=cep,
                 bairro=bairro,
                 numero=numero,
-                complemento=complemento
+                complemento=complemento,
+                cidade = cidade,
+                uf = uf
             )
 
             return redirect('cadastro_finalizado')

@@ -13,6 +13,8 @@ class Usuario(models.Model):
     bairro = models.CharField(max_length=100)
     numero = models.CharField(max_length=10)
     complemento = models.CharField(max_length=100, null=True, blank=True)
+    cidade = models.CharField(max_length=100, null=True, blank=True)
+    uf = models.CharField(max_length=2, null=True, blank=True)
 
     class Meta:
         managed = False  # Django não cria nem altera essa tabela
