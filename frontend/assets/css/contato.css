@@ -64,7 +64,7 @@ nav .active {
 
 /* Imagem de flores */
 .flowers {
-  position: absolute;
+  position: fixed; /* MUDANÇA AQUI: de 'absolute' para 'fixed' */
   top: 0;
   left: 0;
   height: 100%;
