@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Denúncia</title>
+    <link rel="stylesheet" href="{% static 'css/registrar_denuncia.css' %}">
+</head>
+
+<body>
+
+    <a href="{% url 'home_vitima' %}" class="back-button">Voltar</a>
+
+    <div class="container">
+        <img src="{% static 'img/logo-icon.svg' %}" alt="Logo" class="logo">
+        <h1>Registrar denúncia</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+            <input type="hidden" id="cpf" name="cpf" value="{{ cpf }}">
+            <label for="descricao">Descreva o ocorrido</label>
+            <textarea name="descricao" id="descricao" placeholder="Digite aqui os detalhes do ocorrido"
+                required></textarea>
+
+
+            <div class="linha">
+                <div class="campo">
+                    <label for="data">Data do ocorrido</label>
+                    <input type="date" name="data" id="data" required>
+                </div>
+
+                <div class="campo">
+                    <label for="hora">Hora do ocorrido</label>
+                    <input type="time" name="hora" id="hora" required>
+                </div>
+
+                <div class="campo">
+                    <label>Anexar arquivos (opcional)</label>
+                    <label class="file-upload">
+                        <input type="file" name="arquivo">
+                        <img src="{% static 'img/upload.png' %}" alt="Anexar">
+                    </label>
+                </div>
+            </div>
+
+            <!-- Localização -->
+            <label for="localizacao">Localização</label>
+            <input type="text" name="localizacao" id="localizacao" placeholder="Ex.: Rua, Bairro, Cidade" required>
+
+            <!-- Checkbox -->
+            <label class="checkbox">
+                <input type="checkbox" name="provas"> Anexar provas
+            </label>
+
+            <!-- Botão -->
+            <button type="submit" class="enviar-button">Enviar denúncia</button>
+        </form>
+    </div>
+
+    <div class="icons">
+        <a href="#"><img src="{% static 'img/youtube.svg' %}" alt="YouTube" /></a>
+        <a href="#"><img src="{% static 'img/instagram.svg' %}" alt="Instagram" /></a>
+        <a href="#"><img src="{% static 'img/telefone.svg' %}" alt="Telefone" /></a>
+    </div>
+<script src="{% static 'js/registrar_denuncia.js' %}"></script>
+</body>
+
+</html>

@@ -54,4 +54,8 @@ def cadastro_finalizado(request):
     return render(request, 'cadastro/cadastro_finalizado.html')
 
 def home_vitima(request):
-    return render(request, 'home_vitima/home_vitima.html')
+    cpf = request.session.get('cpf')  
+    context = {
+        'usuario': {'cpf': cpf} 
+    }
+    return render(request, 'home_vitima/home_vitima.html', context)

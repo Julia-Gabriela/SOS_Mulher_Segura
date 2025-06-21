@@ -27,7 +27,7 @@ body {
 .content {
     position: absolute;
     top: 50%;
-    left: 55%; 
+    left: 50%; 
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
@@ -146,7 +146,7 @@ body {
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
     
-    /* MUDANÇA AQUI 👇: Removemos o Flexbox para usar posicionamento absoluto no filho */
+   
 }
 
 .modal-overlay.escondido {
@@ -162,13 +162,13 @@ body {
     text-align: center;
     max-width: 450px;
     width: 90%;
-    
-  
+
     position: absolute;
     top: 50%;
-    left: 55%; 
+    left: 50%;
     transform: translate(-50%, -50%);
 }
+
 
 .logo-modal {
     width: 50px;

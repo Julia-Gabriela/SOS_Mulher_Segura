@@ -31,13 +31,14 @@ CREATE TABLE IF NOT EXISTS medidas_protetivas (
 -- Tabela de denúncias
 CREATE TABLE IF NOT EXISTS denuncias (
     id_denuncia INT PRIMARY KEY AUTO_INCREMENT,
-    cpf VARCHAR(14),
-    tipo_denuncia VARCHAR(50) CHECK (tipo_denuncia IN ('alerta', 'detalhada')),
-    descricao TEXT,
-    data_hora DATETIME DEFAULT CURRENT_TIMESTAMP,
-    localizacao VARCHAR(255),
-    provas_anexadas BOOLEAN,
+    cpf VARCHAR(14) NOT NULL,
+    descricao TEXT NOT NULL,
+    data_hora DATETIME NOT NULL,
+    localizacao VARCHAR(255) NOT NULL,
+    provas_anexadas BOOLEAN DEFAULT FALSE,
     FOREIGN KEY (cpf) REFERENCES usuarios(cpf)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Tabela de provas
@@ -79,3 +80,5 @@ CREATE TABLE IF NOT EXISTS configuracoes (
     receber_alertas_sms BOOLEAN,
     FOREIGN KEY (cpf) REFERENCES usuarios(cpf)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+SELECT * FROM usuarios;
+SELECT * FROM denuncias;

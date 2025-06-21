@@ -11,8 +11,8 @@ def login_view(request):
         try:
             usuario = Usuario.objects.get(cpf=cpf)
             if check_password(senha, usuario.senha):
-                # Login bem-sucedido
-                return redirect('home_vitima')  # <-- Redireciona para a home_vitima
+                request.session['cpf'] = usuario.cpf 
+                return redirect('home_vitima')  
             else:
                 messages.error(request, 'Senha incorreta.')
         except Usuario.DoesNotExist:

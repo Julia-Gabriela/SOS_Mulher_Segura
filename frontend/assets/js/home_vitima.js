@@ -51,3 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+localStorage.setItem('cpf_usuario', "{{ usuario.cpf }}");

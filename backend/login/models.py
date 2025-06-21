@@ -19,5 +19,5 @@ class Usuario(models.Model):
         return self.nome
 
     class Meta:
-        managed = False  
+        managed = True
         db_table = 'usuarios'  

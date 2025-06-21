@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: #f8f8f8;
+    font-family: 'Roboto Flex', sans-serif;
+    color: #444;
+}
+
+/* --- Botão Voltar (Direita) --- */
+.back-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background-color: #b7a8dc;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s;
+    font-weight: 500;
+}
+
+.back-button:hover {
+    background-color: #a48ed1;
+}
+
+/* --- Container Principal --- */
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+/* --- Logo e Título --- */
+.logo {
+    width: 90px;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-weight: 500;
+    color: #444;
+}
+
+/* --- Formulário --- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    padding: 35px 45px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 720px;
+}
+
+/* --- Inputs, Textarea, Campos --- */
+input[type="text"],
+input[type="date"],
+input[type="time"],
+textarea {
+    border: none;
+    background-color: #eeeeee;
+    padding: 12px 14px;
+    border-radius: 12px;
+    width: 100%;
+    font-size: 1rem;
+    color: #444;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+textarea {
+    resize: none;
+    height: 150px;
+}
+
+/* --- Linha Data, Hora, Arquivo --- */
+.linha {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.campo input[type="date"],
+.campo input[type="time"],
+.campo .file-upload {
+    background-color: #efefef;
+    border-radius: 16px;
+    padding: 12px 16px;
+    border: none;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-size: 1rem;
+    width: 100%;
+}
+
+/* Upload personalizado */
+.file-upload {
+    position: relative;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.file-upload input[type="file"] {
+    display: none;
+}
+
+.file-upload img {
+    width: 24px;
+    opacity: 0.7;
+}
+
+.file-upload:hover img {
+    opacity: 1;
+}
+
+/* --- Labels --- */
+label {
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: #555;
+}
+
+/* --- Checkbox --- */
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 0.95rem;
+}
+
+/* --- Botão Enviar --- */
+.enviar-button {
+    font-family: 'Roboto', sans-serif;
+    background-color: #b7a8dc;
+    color: white;
+    border: none;
+    width: auto;
+    max-width: 200px;
+    padding: 14px 30px;
+    font-size: 18px;
+    border-radius: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+    align-self: center;
+}
+
+.enviar-button:hover {
+    background-color: #a48ed1;
+}
+
+/* --- Ícones do rodapé --- */
+.icons {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    display: flex;
+    gap: 20px;
+    z-index: 100;
+}
+
+.icons img {
+    width: 22px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.icons img:hover {
+    opacity: 1;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 600px) {
+    .linha {
+        flex-direction: column;
+    }
+}

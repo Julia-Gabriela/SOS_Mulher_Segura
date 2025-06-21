@@ -8,3 +8,7 @@ def contato(request):
     return render(request, 'contato.html')
 def sobre(request):
     return render(request, 'sobre.html')
+def registrar_denuncia(request):
+    return render(request, 'registrar_denuncia.html')
+def home_vitima(request):
+    return render(request, 'home_vitima.html')
