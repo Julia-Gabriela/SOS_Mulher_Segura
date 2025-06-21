@@ -14,3 +14,5 @@ def home_vitima(request):
     return render(request, 'home_vitima.html')
 def denuncia_enviada(request):
     return render(request, 'denuncias/denuncia_enviada.html')
+def historico_denuncias(request):
+    return render(request, 'denuncias/historico_denuncia.html')

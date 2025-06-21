@@ -59,3 +59,6 @@ def home_vitima(request):
         'usuario': {'cpf': cpf} 
     }
     return render(request, 'home_vitima/home_vitima.html', context)
+
+def historico_denuncia(request):
+    return render(request, 'denuncias/historico_denuncia.html')
