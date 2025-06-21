@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Nós</title>
+    <link rel="stylesheet" href="{% static 'css/sobre.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Início</a></li>
+                <li class="active"><a href="{% url 'sobre' %}">Sobre</a></li>
+                <li><a href="{% url 'contato' %}">Contato</a></li>
+            </ul>
+            <a href="{% url 'login' %}" class="login-btn">Login</a>
+        </nav>
+    </header>
+    
+    <img src="{% static 'img/flowers.png' %}" alt="Flores decorativas" class="flowers">
+
+    <main class="about-area">
+        <div class="logo">
+            <img src="{% static 'img/logo-icon.svg' %}" alt="Logo Mulher Segura" />
+        </div>
+
+        <div class="about-text">
+            <h2>Sobre nós</h2>
+            <p>
+                SOS Mulher Segura é um projeto desenvolvido por estudantes do curso de Ciência da Computação com o objetivo de criar uma solução tecnológica voltada à proteção de mulheres vítimas de violência doméstica que já possuem medidas protetivas concedidas.
+
+A proposta nasceu da percepção de uma falha importante no sistema: muitas mulheres continuam em risco mesmo após denunciarem seus agressores e conseguirem respaldo legal. Pensando nisso, desenvolvemos um sistema web com suporte a PWA que funciona como um canal rápido, acessível e seguro para registrar alertas e denúncias em tempo real.
+
+A aplicação permite o envio de alertas emergenciais, anexos de provas, notificações automáticas para contatos e autoridades, além do acompanhamento completo do histórico de ocorrências. O foco está em oferecer um apoio digital complementar às medidas judiciais, garantindo mais segurança e autonomia às vítimas.
+            </p>
+        </div>
+
+        <div class="collaborators">
+            <h2>Colaboradores</h2>
+            <img src="{% static 'img/logo_ucb.png' %}" alt="Logo Universidade Católica de Brasília">
+        </div>
+    </main>
+
+    <footer>
+        <div class="icons">
+            <a href="#"><img src="{% static 'img/youtube.svg' %}" alt="YouTube" /></a>
+            <a href="#"><img src="{% static 'img/instagram.svg' %}" alt="Instagram" /></a>
+            <a href="#"><img src="{% static 'img/telefone.svg' %}" alt="Telefone" /></a>
+        </div>
+    </footer>
+</body>
+</html>
