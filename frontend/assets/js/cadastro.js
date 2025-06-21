@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const cepInput = document.querySelector('input[name="cep"]');
     const bairroInput = document.querySelector('input[name="bairro"]');
+    const complementoInput = document.querySelector('input[name="complemento"]');
     const cidadeInput = document.querySelector('input[name="cidade"]');
     const ufSelect = document.getElementById('uf');
 
@@ -65,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 bairroInput.value = data.bairro || '';
                 cidadeInput.value = data.localidade || '';
                 ufSelect.value = data.uf || '';
+                complementoInput.value = data.logradouro || ''
             })
             .catch(() => {
                 alert("Erro ao buscar CEP. Tente novamente.");
