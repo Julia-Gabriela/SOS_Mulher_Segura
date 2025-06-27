@@ -7,7 +7,7 @@ Sistema de denúncia e monitoramento de medidas protetivas para vítimas de viol
 O **SOS Mulher Segura** é uma aplicação web com suporte a PWA (Progressive Web App) desenvolvida para auxiliar vítimas de violência doméstica. A plataforma permite o registro de denúncias, envio de alertas de emergência, controle de medidas protetivas e gerenciamento de contatos de confiança. Também possui integração com um banco de dados simulado da polícia, permitindo a visualização de medidas registradas oficialmente.
 
 🎥 **Assista à apresentação do projeto:**  
-[![Vídeo de Apresentação](https://img.youtube.com/vi/XWlDxSdLTcc/0.jpg)](https://youtu.be/XWlDxSdLTcc)
+[![Vídeo de Apresentação](https://img.youtube.com/vi/XWlDxSdLTcc/0.jpg)](https://youtu.be/hzKQoKnCSCc)
 
 ## 💡 Funcionalidades
 
