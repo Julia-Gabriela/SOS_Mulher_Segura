@@ -4,30 +4,34 @@ Sistema de denúncia e monitoramento de medidas protetivas para vítimas de viol
 
 ## 📌 Descrição
 
-O **SOS Mulher Segura** que esta sendo desenvolvido é uma aplicação web com suporte a PWA (Progressive Web App) que permite a vítimas de violência doméstica registrarem denúncias, acionarem alertas de emergência, controlarem medidas protetivas e configurarem contatos de confiança. O sistema também integra um banco de dados simulado da polícia para visualização de medidas registradas oficialmente.
+O **SOS Mulher Segura** é uma aplicação web com suporte a PWA (Progressive Web App) desenvolvida para auxiliar vítimas de violência doméstica. A plataforma permite o registro de denúncias, envio de alertas de emergência, controle de medidas protetivas e gerenciamento de contatos de confiança. Também possui integração com um banco de dados simulado da polícia, permitindo a visualização de medidas registradas oficialmente.
+
+🎥 **Assista à apresentação do projeto:**  
+[![Vídeo de Apresentação](https://img.youtube.com/vi/XWlDxSdLTcc/0.jpg)](https://youtu.be/XWlDxSdLTcc)
 
 ## 💡 Funcionalidades
 
-- 📍 Botão de alerta rápido
-- 📝 Registro de denúncia (detalhada ou rápida)
-- 📄 Histórico de denúncias
-- 👥 Gerenciamento de contatos de confiança
-- ⚙️ Configuração de notificações
-- 📑 Integração com banco simulado da polícia
-- 🔐 Autenticação e segurança de acesso
+- 📍 Botão de alerta rápido  
+- 📝 Registro de denúncia (detalhada ou rápida)  
+- 📄 Histórico de denúncias  
+- 👥 Gerenciamento de contatos de confiança  
+- ⚙️ Configuração de notificações  
+- 📑 Integração com banco simulado da polícia  
+- 🔐 Autenticação e segurança de acesso  
 
 ## 🧱 Arquitetura
 
-- **Backend**: Django 4.x (Python 3.10+)
-- **Frontend**: React (via integração PWA)
-- **Banco de Dados Principal**: PostgreSQL
-- **Banco Simulado da Polícia**: MySQL
-- **Padrão Arquitetural**: MVC (Model-View-Controller)
-- **Implantação**: Monolítico modular, com estrutura migrável para micro-serviços
+- **Backend**: Django 4.x (Python 3.10+)  
+- **Frontend**: React (via integração PWA)  
+- **Banco de Dados Principal**: PostgreSQL  
+- **Banco Simulado da Polícia**: MySQL  
+- **Padrão Arquitetural**: MVC (Model-View-Controller)  
+- **Implantação**: Monolítico modular, com estrutura migrável para micro-serviços  
 
 ## 🤝 Colaboradores
-- [Júlia Gabriela](https://github.com/Julia-Gabriela)
-- [Lara Ewellen](https://github.com/Laraewellen)
-- [Luiza lima](https://github.com/luizalima13)
-- [Ian Caldas](https://github.com/IanACaldas)
+
+- [Júlia Gabriela](https://github.com/Julia-Gabriela)  
+- [Lara Ewellen](https://github.com/Laraewellen)  
+- [Luiza Lima](https://github.com/luizalima13)  
+- [Ian Caldas](https://github.com/IanACaldas)  
 - [Joyce Aline](https://github.com/Joyce2004Aline)
