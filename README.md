@@ -33,5 +33,3 @@ O **SOS Mulher Segura** é uma aplicação web com suporte a PWA (Progressive We
 - [Júlia Gabriela](https://github.com/Julia-Gabriela)  
 - [Lara Ewellen](https://github.com/Laraewellen)  
 - [Luiza Lima](https://github.com/luizalima13)  
-- [Ian Caldas](https://github.com/IanACaldas)  
-- [Joyce Aline](https://github.com/Joyce2004Aline)
